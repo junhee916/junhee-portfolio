@@ -12,12 +12,18 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Header -->
-  <header class="bg-white shadow">
-    <div class="max-w-5xl mx-auto px-6 py-6">
-      <h1 class="text-3xl font-bold">junhee-portfolio</h1>
-      <p class="text-sm text-gray-500">GitHub Pages · 최신 버전</p>
+    <header class="bg-white shadow">
+    <div class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div>
+        <h1 class="text-3xl font-bold">junhee-portfolio</h1>
+        <p class="text-sm text-gray-500">GitHub Pages · 최신 버전</p>
+        </div>
+        <nav class="flex gap-4">
+        <a href="/" class="text-gray-600 hover:underline">Home</a>
+        <a href="docs.html" class="text-blue-600 underline">Tech Docs</a>
+        </nav>
     </div>
-  </header>
+    </header>
 
   <main class="max-w-5xl mx-auto px-6 py-8 space-y-10">
     <!-- Intro -->
@@ -108,41 +114,6 @@
               <li><strong>기술:</strong> Flask, Oracle, Koreai 플랫폼, Redis</li>
               <li>🔗 <a class="text-blue-600 underline" href="https://mooas.com/index.html" target="_blank" rel="noopener">서비스 링크</a></li>
             </ul>
-
-              <!-- ▼ 추가: PDF 내장 뷰어(접기/펼치기) -->
-            <details class="mt-4 bg-white rounded-xl p-4 shadow">
-                <summary class="cursor-pointer font-semibold">📄 기술 문서 원문 보기 (PDF 뷰어)</summary>
-                <div class="mt-4 space-y-6">
-                    <div>
-                        <p class="font-medium mb-2">AICC RAG 프로세스</p>
-                        <iframe
-                        src="assets/pdfs/aicc_rag_process.pdf#view=Fit"
-                        width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px"></iframe>
-                    </div>
-
-                    <div>
-                        <p class="font-medium mb-2">모델 티어 리밋 교체 프로세스</p>
-                        <iframe
-                        src="assets/pdfs/model_tier_switch.pdf#view=Fit"
-                        width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px"></iframe>
-                    </div>
-
-                    <div>
-                        <p class="font-medium mb-2">RAG Server Redis Cache 적용</p>
-                        <iframe
-                        src="assets/pdfs/rag_redis_cache.pdf#view=Fit"
-                        width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px"></iframe>
-                    </div>
-
-                    <div>
-                        <p class="font-medium mb-2">RAG 부하(Gunicorn) 적용</p>
-                        <iframe
-                        src="assets/pdfs/rag_gunicorn_load.pdf#view=Fit"
-                        width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px"></iframe>
-                    </div>
-
-                </div>
-            </details>
           </div>
 
           <div>
