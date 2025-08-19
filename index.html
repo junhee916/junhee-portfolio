@@ -12,7 +12,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Mermaid (아키텍처 다이어그램) -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: "default" });</script>
+  <script>
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: "default",
+        securityLevel: "loose",
+        flowchart: { htmlLabels: false }
+    });
+    </script>
   <style>
     /* 작은 미세 개선 */
     html { scroll-behavior: smooth; }
@@ -70,86 +77,119 @@
       <h2 class="text-xl sm:text-2xl font-bold">💼 기업별 주요 프로젝트 (Case Studies)</h2>
 
       <!-- 조인글로벌 -->
-      <article class="bg-white rounded-2xl p-6 shadow space-y-6">
-        <h3 class="text-lg sm:text-xl font-bold">㈜ 조인글로벌</h3>
+    <article class="bg-white rounded-2xl p-6 shadow space-y-6">
+    <h3 class="text-lg sm:text-xl font-bold">㈜ 조인글로벌</h3>
 
-        <!-- 나비서 -->
-        <div class="border rounded-xl p-5">
-          <h4 class="font-semibold text-base sm:text-lg">🦋 나비서 (AI 가상비서 앱)</h4>
-          <p class="text-sm text-gray-500 mt-1"><b>기간</b> 2025.02–2025.06 · <b>역할</b> AI/STT 메인 (100%) · <b>기술</b> Flask, MySQL, AWS</p>
+    <div class="border rounded-xl p-5">
+        <h4 class="font-semibold text-base sm:text-lg">🦋 나비서 (AI 가상비서 앱)</h4>
+        <p class="text-sm text-gray-500 mt-1">
+        <b>기간</b> 2025.02–2025.06 · <b>역할</b> AI/STT 메인 (100%) · <b>기술</b> Flask, MySQL, AWS, OpenAI
+        </p>
 
-          <div class="grid sm:grid-cols-2 gap-5 mt-4">
-            <div>
-              <h5 class="font-semibold">Problem</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li>STT 기반 요약/구조화 기능 불안정</li>
-                <li>다국어 STT 및 파일 저장(미디어) 체계 필요</li>
-              </ul>
-            </div>
-            <div>
-              <h5 class="font-semibold">Solution</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li>OpenAI API로 운세/궁합 기능 및 대화 파이프라인 구성</li>
-                <li>AWS S3 연동 + 한/중/영/일 STT 지원</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-5 mt-3">
-            <div>
-              <h5 class="font-semibold">Impact</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li>불안정 기능 상용화 수준으로 개선</li>
-                <li>다국어 지원으로 사용자 범위 확대</li>
-              </ul>
-            </div>
-            <div>
-              <h5 class="font-semibold">Artifacts</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li><a class="text-blue-600 underline" href="https://mindhaven.co.kr" target="_blank" rel="noopener">서비스 링크</a></li>
-                <!-- 실코드는 보안상 비공개, 필요 시 토이 리포 링크로 대체 -->
-              </ul>
-            </div>
-          </div>
+        <div class="grid sm:grid-cols-2 gap-5 mt-4">
+        <div>
+            <h5 class="font-semibold">Problem</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>STT 기반 요약/구조화 결과의 일관성 부족</li>
+            <li>다국어 STT 및 미디어 저장 파이프라인 부재</li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-semibold">Solution</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>OpenAI API로 운세/궁합 및 대화 파이프라인 구성</li>
+            <li>AWS S3 연동 + 한/중/영/일 STT 지원</li>
+            <li><b>System role 세분화 + JSON 스키마 표준화</b>로 LLM 출력 안정화</li>
+            </ul>
+        </div>
         </div>
 
-        <!-- 마인드헤이븐 -->
-        <div class="border rounded-xl p-5">
-          <h4 class="font-semibold text-base sm:text-lg">🧠 마인드헤이븐 (AI 심리상담 서비스)</h4>
-          <p class="text-sm text-gray-500 mt-1"><b>기간</b> 2025.03–2025.06 · <b>역할</b> AI/유지보수 (100%) · <b>기술</b> Flask, MySQL, AWS</p>
-
-          <div class="grid sm:grid-cols-2 gap-5 mt-4">
-            <div>
-              <h5 class="font-semibold">Problem</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li>외주 개발 미흡으로 서비스 품질 저하</li>
-              </ul>
-            </div>
-            <div>
-              <h5 class="font-semibold">Solution</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li>AI 자가진단 개선, 버그 전면 수정</li>
-                <li>자가진단 → 상세 분석 리포트 자동화</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-5 mt-3">
-            <div>
-              <h5 class="font-semibold">Impact</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li>상용화 완료 및 사용자 경험 안정화</li>
-              </ul>
-            </div>
-            <div>
-              <h5 class="font-semibold">Artifacts</h5>
-              <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li><a class="text-blue-600 underline" href="https://mindhaven.co.kr" target="_blank" rel="noopener">서비스 링크</a></li>
-              </ul>
-            </div>
-          </div>
+        <div class="grid sm:grid-cols-2 gap-5 mt-3">
+        <div>
+            <h5 class="font-semibold">Impact</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>불안정했던 요약/구조화 기능을 상용 수준으로 개선</li>
+            <li>다국어 지원으로 사용 범위 확대 및 운영 편의성 향상</li>
+            </ul>
         </div>
-      </article>
+        <div>
+            <h5 class="font-semibold">Artifacts</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>🎥 <a class="text-blue-600 underline" href="https://www.youtube.com/shorts/p8R4qE3qCUM" target="_blank" rel="noopener">시연 영상 (Shorts)</a></li>
+            <li>📑 <a class="text-blue-600 underline" href="docs.html" target="_blank" rel="noopener">기술 요약(공개용)</a> <span class="text-gray-400">— 상세 프롬프트는 비공개</span></li>
+            </ul>
+        </div>
+        </div>
+
+        <!-- ① STT → 요약·구조화(JSON) -->
+        <h6 class="font-semibold mt-5">① STT → 요약·구조화(JSON)</h6>
+        <div class="mermaid">
+        %%{init: { "theme": "default" }}%%
+        flowchart LR
+        A["Mobile App<br/>음성 파일"] -->|upload| S3["AWS S3"]
+        A --> API1["Flask API"]
+
+        API1 -->|STT| DGL["DAGLO STT"]
+        DGL --> API1
+
+        API1 -->|요약·구조화(JSON)| LLM1["OpenAI LLM"]
+        CSV1["입·출력 예시 CSV<br/>(가이드)"] -.-> LLM1
+        LLM1 --> DB["MySQL"]
+        API1 -->|결과 JSON| A
+        </div>
+
+        <!-- ② 운세·궁합(프롬프트 기반) -->
+        <h6 class="font-semibold mt-6">② 운세·궁합(프롬프트 기반)</h6>
+        <div class="mermaid">
+         %%{init: { "theme": "default" }}%%
+        flowchart LR
+        M["Mobile App<br/>프롬프트 입력"] --> API2["Flask API"]
+
+        API2 -->|운세·궁합 분석| LLM2["OpenAI LLM"]
+        SYS["System Role<br/>세부 지침(비공개)"] -.-> LLM2
+
+        LLM2 -->|결과 카드(JSON)| API2
+        API2 --> M
+        </div>
+    </div>
+
+    <!-- 마인드헤이븐 -->
+    <div class="border rounded-xl p-5">
+        <h4 class="font-semibold text-base sm:text-lg">🧠 마인드헤이븐 (AI 심리상담 서비스)</h4>
+        <p class="text-sm text-gray-500 mt-1"><b>기간</b> 2025.03–2025.06 · <b>역할</b> AI/유지보수 (100%) · <b>기술</b> Flask, MySQL, AWS</p>
+
+        <div class="grid sm:grid-cols-2 gap-5 mt-4">
+        <div>
+            <h5 class="font-semibold">Problem</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>외주 개발 미흡으로 서비스 품질 저하</li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-semibold">Solution</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>AI 자가진단 개선, 버그 전면 수정</li>
+            <li>자가진단 → 상세 분석 리포트 자동화</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5 mt-3">
+        <div>
+            <h5 class="font-semibold">Impact</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>상용화 완료 및 사용자 경험 안정화</li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-semibold">Artifacts</h5>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li><a class="text-blue-600 underline" href="https://mindhaven.co.kr" target="_blank" rel="noopener">서비스 링크</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </article>
 
       <!-- 네이블커뮤니케이션즈 -->
       <article class="bg-white rounded-2xl p-6 shadow space-y-6">
