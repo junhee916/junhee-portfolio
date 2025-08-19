@@ -81,68 +81,75 @@
     <h3 class="text-lg sm:text-xl font-bold">㈜ 조인글로벌</h3>
 
     <div class="border rounded-xl p-5">
-        <h4 class="font-semibold text-base sm:text-lg">🦋 나비서 (AI 가상비서 앱)</h4>
-        <p class="text-sm text-gray-500 mt-1">
+    <h4 class="font-semibold text-base sm:text-lg">🦋 나비서 (AI 가상비서 앱)</h4>
+    <p class="text-sm text-gray-500 mt-1">
         <b>기간</b> 2025.02–2025.06 · <b>역할</b> AI/STT 메인 (100%) · <b>기술</b> Flask, MySQL, AWS, OpenAI
-        </p>
+    </p>
 
-        <div class="grid sm:grid-cols-2 gap-5 mt-4">
+    <!-- ✅ Problem / Solution / Demo (3열) -->
+    <div class="grid sm:grid-cols-3 gap-5 mt-4">
         <div>
-            <h5 class="font-semibold">Problem</h5>
-            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+        <h5 class="font-semibold">Problem</h5>
+        <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
             <li>STT 기반 요약/구조화 결과의 일관성 부족</li>
             <li>다국어 STT 및 미디어 저장 파이프라인 부재</li>
-            </ul>
+        </ul>
         </div>
         <div>
-            <h5 class="font-semibold">Solution</h5>
-            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+        <h5 class="font-semibold">Solution</h5>
+        <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
             <li>OpenAI API로 운세/궁합 및 대화 파이프라인 구성</li>
             <li>AWS S3 연동 + 한/중/영/일 STT 지원</li>
             <li><b>System role 세분화 + JSON 스키마 표준화</b>로 LLM 출력 안정화</li>
-            </ul>
-        </div>
+        </ul>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-5 mt-3">
+        <!-- ✅ Demo (우측) -->
         <div>
-            <h5 class="font-semibold">Impact</h5>
-            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+        <h5 class="font-semibold">Demo</h5>
+        <div class="mt-2 rounded-xl overflow-hidden border shadow-sm">
+            <!-- 9:16 반응형 박스 (Shorts) -->
+            <div class="relative w-full" style="padding-top:177.78%;">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/p8R4qE3qCUM"
+                class="absolute top-0 left-0 w-full h-full"
+                title="YouTube Shorts Demo"
+                frameborder="0"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <div class="flex items-center justify-between px-3 py-2 text-xs text-gray-500 bg-gray-50">
+            <span>시연 영상 (Shorts)</span>
+            <a class="text-blue-600 hover:underline"
+                href="https://www.youtube.com/shorts/p8R4qE3qCUM" target="_blank" rel="noopener">YouTube로 열기</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Impact / Artifacts (영상 항목은 제거) -->
+    <div class="grid sm:grid-cols-2 gap-5 mt-3">
+        <div>
+        <h5 class="font-semibold">Impact</h5>
+        <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
             <li>불안정했던 요약/구조화 기능을 상용 수준으로 개선</li>
             <li>다국어 지원으로 사용 범위 확대 및 운영 편의성 향상</li>
-            </ul>
+        </ul>
         </div>
         <div>
-            <h5 class="font-semibold">Artifacts</h5>
-            <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
-                <li>🎥 시연 영상 (Shorts)</li>
-            </ul>
-
-            <!-- 유튜브 Shorts 뷰어 -->
-            <div class="mt-2">
-                <div class="relative w-full" style="padding-top:177.78%;"> <!-- 9:16 비율 -->
-                <iframe
-                    src="https://www.youtube.com/embed/p8R4qE3qCUM"
-                    class="absolute top-0 left-0 w-full h-full rounded-xl border"
-                    title="YouTube Shorts player"
-                    frameborder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                </div>
-            </div>
-
-            <ul class="list-disc ml-5 mt-3 space-y-1 text-sm">
-                <li>📑 <a class="text-blue-600 underline" href="docs.html" target="_blank" rel="noopener">
-                기술 요약(공개용)
-                </a> <span class="text-gray-400">— 상세 프롬프트는 비공개</span></li>
-            </ul>
+        <h5 class="font-semibold">Artifacts</h5>
+        <ul class="list-disc ml-5 mt-1 space-y-1 text-sm">
+            <li>📑 <a class="text-blue-600 underline" href="docs.html" target="_blank" rel="noopener">기술 요약(공개용)</a>
+            <span class="text-gray-400">— 상세 프롬프트는 비공개</span></li>
+        </ul>
         </div>
-        </div>
+    </div>
 
-        <!-- ① STT → 요약·구조화(JSON) -->
-        <h6 class="font-semibold mt-5">① STT → 요약·구조화(JSON)</h6>
-        <div class="mermaid">
+    <!-- ① STT → 요약·구조화(JSON) -->
+    <h6 class="font-semibold mt-5">① STT → 요약·구조화(JSON)</h6>
+    <div class="mermaid">
         %%{init: { "theme": "default", "flowchart": { "htmlLabels": false }, "securityLevel": "loose" }}%%
         flowchart LR
         A["Mobile App\n음성 파일"] --> S3["AWS S3"]
@@ -153,10 +160,11 @@
         CSV1["입·출력 예시 CSV\n(가이드)"] -.-> LLM1
         LLM1 --> DB["MySQL"]
         API1 --> A
-        </div>
+    </div>
 
-        <h6 class="font-semibold mt-6">② 운세·궁합(프롬프트 기반)</h6>
-        <div class="mermaid">
+    <!-- ② 운세·궁합(프롬프트 기반) -->
+    <h6 class="font-semibold mt-6">② 운세·궁합(프롬프트 기반)</h6>
+    <div class="mermaid">
         %%{init: { "theme": "default", "flowchart": { "htmlLabels": false }, "securityLevel": "loose" }}%%
         flowchart LR
         M["Mobile App\n프롬프트 입력"] --> API2["Flask API"]
@@ -164,7 +172,7 @@
         SYS["System Role\n세부 지침(비공개)"] -.-> LLM2
         LLM2 --> API2
         API2 --> M
-        </div>
+    </div>
     </div>
 
     <!-- 마인드헤이븐 -->
