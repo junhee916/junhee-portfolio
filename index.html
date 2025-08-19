@@ -7,6 +7,8 @@
   <meta name="description" content="OpenAI·AICC·RAG·Flask 기반 AI API 서비스 개발자 박준희 포트폴리오" />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: "default" });</script>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Header -->
@@ -106,6 +108,44 @@
               <li><strong>기술:</strong> Flask, Oracle, Koreai 플랫폼, Redis</li>
               <li>🔗 <a class="text-blue-600 underline" href="https://mooas.com/index.html" target="_blank" rel="noopener">서비스 링크</a></li>
             </ul>
+
+              <!-- ▼ 추가: PDF 내장 뷰어(접기/펼치기) -->
+            <details class="mt-4 bg-white rounded-xl p-4 shadow">
+                <summary class="cursor-pointer font-semibold">📄 기술 문서 원문 보기 (PDF 뷰어)</summary>
+                <div class="mt-4 space-y-6">
+                <div>
+                    <p class="font-medium mb-2">AICC RAG 프로세스</p>
+                    <iframe
+                    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fjunhee916.github.io%2Fjunhee-portfolio%2Fassets%2Fpdfs%2Faicc_rag_process.pdf#zoom=page-fit"
+                    width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px">
+                    </iframe>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">모델 티어 리밋 교체 프로세스</p>
+                    <iframe
+                    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fjunhee916.github.io%2Fjunhee-portfolio%2Fassets%2Fpdfs%2Fmodel_tier_switch.pdf#zoom=page-fit"
+                    width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px">
+                    </iframe>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">RAG Server Redis Cache 적용</p>
+                    <iframe
+                    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fjunhee916.github.io%2Fjunhee-portfolio%2Fassets%2Fpdfs%2Frag_redis_cache.pdf#zoom=page-fit"
+                    width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px">
+                    </iframe>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">RAG 부하(Gunicorn) 적용</p>
+                    <iframe
+                    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fjunhee916.github.io%2Fjunhee-portfolio%2Fassets%2Fpdfs%2Frag_gunicorn_load.pdf#zoom=page-fit"
+                    width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px">
+                    </iframe>
+                </div>
+                </div>
+            </details>
           </div>
 
           <div>
