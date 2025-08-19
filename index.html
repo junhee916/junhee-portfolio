@@ -124,31 +124,26 @@
         <!-- ① STT → 요약·구조화(JSON) -->
         <h6 class="font-semibold mt-5">① STT → 요약·구조화(JSON)</h6>
         <div class="mermaid">
-        %%{init: { "theme": "default" }}%%
+        %%{init: { "theme": "default", "flowchart": { "htmlLabels": false }, "securityLevel": "loose" }}%%
         flowchart LR
-        A["Mobile App<br/>음성 파일"] -->|upload| S3["AWS S3"]
+        A["Mobile App\n음성 파일"] --> S3["AWS S3"]
         A --> API1["Flask API"]
-
-        API1 -->|STT| DGL["DAGLO STT"]
+        API1 --> DGL["DAGLO STT"]
         DGL --> API1
-
-        API1 -->|요약·구조화(JSON)| LLM1["OpenAI LLM"]
-        CSV1["입·출력 예시 CSV<br/>(가이드)"] -.-> LLM1
+        API1 --> LLM1["OpenAI LLM"]
+        CSV1["입·출력 예시 CSV\n(가이드)"] -.-> LLM1
         LLM1 --> DB["MySQL"]
-        API1 -->|결과 JSON| A
+        API1 --> A
         </div>
 
-        <!-- ② 운세·궁합(프롬프트 기반) -->
         <h6 class="font-semibold mt-6">② 운세·궁합(프롬프트 기반)</h6>
         <div class="mermaid">
-         %%{init: { "theme": "default" }}%%
+        %%{init: { "theme": "default", "flowchart": { "htmlLabels": false }, "securityLevel": "loose" }}%%
         flowchart LR
-        M["Mobile App<br/>프롬프트 입력"] --> API2["Flask API"]
-
-        API2 -->|운세·궁합 분석| LLM2["OpenAI LLM"]
-        SYS["System Role<br/>세부 지침(비공개)"] -.-> LLM2
-
-        LLM2 -->|결과 카드(JSON)| API2
+        M["Mobile App\n프롬프트 입력"] --> API2["Flask API"]
+        API2 --> LLM2["OpenAI LLM"]
+        SYS["System Role\n세부 지침(비공개)"] -.-> LLM2
+        LLM2 --> API2
         API2 --> M
         </div>
     </div>
